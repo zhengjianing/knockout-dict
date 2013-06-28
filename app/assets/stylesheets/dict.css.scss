@@ -1,0 +1,135 @@
+// Place all the styles related to the dict controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-image: url(./bg.jpg);
+  background-size: 100%;
+  font: 15px/23px 'Geom Slab 703 W01 Light', Arial;
+  font-size: 20px;
+  color: #58676a;
+}
+
+.container {
+  text-align: center;
+  padding: 10px 346px;
+
+  .words-list-area {
+    height: 550px;
+    overflow: scroll;
+    display: inline-block;
+
+    p {
+      font-size: 30px;
+    }
+
+    ul {
+      width: 600px;
+      list-style: none;
+      padding-left: 0px;
+
+      li {
+        padding-left: 5px;
+        position: relative;
+        min-height: 70px;
+        line-height: 70px;
+        vertical-align: middle;
+        opacity: 0.8;
+        text-align: left;
+        padding-left: 55px;
+        font-weight: bold;
+        border-bottom: 1px solid gainsboro;
+        background-image: url(./icon1.png);
+        background-repeat: no-repeat;
+        background-size: 5%;
+        background-position: 10px 50%;
+
+        p {
+          padding: 0px;
+          margin: 0px;
+        }
+      }
+
+      li:hover {
+        background-color: transparentize(#58676a, 0.9);
+        cursor: pointer;
+      }
+
+      li:nth-child(1) {
+        background-color: transparentize(#58676a, 0.9);
+      }
+
+      .english {
+        display: inline-block;
+        max-width: 200px;
+      }
+      .chinese {
+        display: inline-block;
+        max-width: 200px;
+        position: absolute;
+        right: 30px;
+      }
+    }
+  }
+
+  .input-area {
+    border: 2px solid gainsboro;
+    box-shadow: 2px 2px 20px gainsboro;
+    position: relative;
+    text-align: left;
+    padding-top: 40px;
+    padding-left: 45px;
+    padding-bottom: 30px;
+    background-color: #eaeeed;
+    margin-right: 2px;
+    height: auto;
+    border-radius: 10px;
+
+    .preview-item {
+      padding-top: 30px;
+      font-weight: bold;
+      display: inline-block;
+
+      .preview-title {
+        display: inline-block;
+      }
+
+      .preview-details {
+        display: inline-block;
+        padding-left: 25px;
+      }
+    }
+
+    .add-item {
+      span {
+        padding-right: 5px;
+      }
+
+      input {
+        height: 30px;
+        border-radius: 4px;
+        font-size: 20px;
+      }
+    }
+
+    button {
+      position: absolute;
+      right: 30px;
+      cursor: pointer;
+      height: 36px;
+      line-height: 30px;
+      width: 86px;
+      border-radius: 6px;
+      padding: 1px;
+      background-color: black;
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+      border:  1px solid #ddd;
+      font: 17px Helvetica, arial, freesans, clean, sans-serif;
+    }
+    button:disabled {
+      background-color: gray;
+    }
+
+  }
+}

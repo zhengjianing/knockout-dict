@@ -1,0 +1,38 @@
+.container
+  .words-list-area
+    %p 2013 年 6 月 30 日
+    %ul{'data-bind'=>'foreach: {data: items, as: "item"}'}
+      %li
+        %p.english{'data-bind'=>'text: item.english'}
+        %p.chinese{'data-bind'=>'text: item.chinese'}
+
+  .input-area
+    .add-item
+      %span 新单词
+      %input{'type'=>'text', 'placeholder'=>'English', 'onKeyPress'=>'doClick()', 'data-bind'=>"value: englishToAdd, valueUpdate: 'afterkeydown'"}
+      %input{'type'=>'text', 'placeholder'=>'Chinese', 'onKeyPress'=>'doClick()', 'data-bind'=>"value: chineseToAdd, valueUpdate: 'afterkeydown'"}
+      %button#addItemButton{'data-bind'=>'click: addItem, enable: englishToAdd().length > 0'} 增 加
+    .preview-item
+      .preview-title 预览
+      %p.preview-details{'data-bind'=>'text: englishToAdd'}
+      %p.preview-details{'data-bind'=>'text: chineseToAdd'}
+
+
+:javascript
+  var doClick = function(e){
+      if (typeof e == 'undefined' && window.event) {
+         e = window.event;
+      };
+
+      var key = e.keyCode;
+
+      if (key == 13)
+      {
+          var btn = $('#addItemButton');
+          if (btn != null)
+          {
+              btn.click();
+              e.keyCode = 0
+          }
+      }
+  }
